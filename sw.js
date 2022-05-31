@@ -5,7 +5,7 @@ const assets = [
   `${BASE_URL}css/materialize.min.css`,
   `${BASE_URL}css/style.css`,
   `${BASE_URL}img/icon.png`,
-  `${BASE_URL}js/app.js`
+  `${BASE_URL}js/app.js`,
   `${BASE_URL}js/instalar.js`,
   `${BASE_URL}js/materialize.min.js`,
   `${BASE_URL}index.html`,
