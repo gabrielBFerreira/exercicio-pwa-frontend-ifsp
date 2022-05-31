@@ -8,7 +8,7 @@ const assets = [
   `${BASE_URL}js/app.js`
   `${BASE_URL}js/instalar.js`,
   `${BASE_URL}js/materialize.min.js`,
-  `${BASE_URL}app.html`,
+  `${BASE_URL}index.html`,
   `${BASE_URL}manifest.json`,
 ];
 
