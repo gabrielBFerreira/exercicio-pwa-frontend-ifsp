@@ -9,6 +9,19 @@ if ("serviceWorker" in navigator) {
   })
 }
 
+document.getElementById('networkStatus').innerHTML = navigator.onLine ? 'online' : 'offline';
+
+async function gerenciarStatusRede() {
+  const statusHistory = document.getElementById('statusHistory');
+  const time = new Date().toTimeString().split(' ')[0];
+  
+  const statusLine = document.createElement('p');
+  const status = navigator.onLine ? 'online' : 'offline';
+  
+  statusLine.innerHTML = `${time} - status da conexão mudou para ${status}.`;
+  statusHistory.appendChild(statusLine);
+}
+
 async function listarCampeonatos() {
   const result = await fetch('https://api-football-standings.azharimm.site/leagues');
   const leagues = await result.json();
@@ -154,6 +167,9 @@ async function tabelaCampeonato(leagueId, year) {
 
   element.appendChild(table);
 }
+
+window.addEventListener('online', gerenciarStatusRede);
+window.addEventListener('offline', gerenciarStatusRede);
 
 listarCampeonatos();
 detalhesCampeonato('bra.1');
