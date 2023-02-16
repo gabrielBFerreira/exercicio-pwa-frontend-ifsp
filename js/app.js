@@ -23,7 +23,7 @@ async function gerenciarStatusRede() {
 }
 
 async function listarCampeonatos() {
-  const result = await fetch('https://api-football-standings.azharimm.site/leagues');
+  const result = await fetch('https://api-football-standings.azharimm.dev/leagues');
   const leagues = await result.json();
   
   const element = document.getElementById('leagueList');
@@ -37,7 +37,7 @@ async function listarCampeonatos() {
 }
 
 async function detalhesCampeonato(leagueId) {
-  const result = await fetch(`https://api-football-standings.azharimm.site/leagues/${leagueId}`);
+  const result = await fetch(`https://api-football-standings.azharimm.dev/leagues/${leagueId}`);
   const league = await result.json();
 
   const element = document.getElementById('leagueDetails');
@@ -55,7 +55,7 @@ async function detalhesCampeonato(leagueId) {
 }
 
 async function tabelaCampeonato(leagueId, year) {
-  const result = await fetch(`https://api-football-standings.azharimm.site/leagues/${leagueId}/standings?season=${year}&sort=asc`);
+  const result = await fetch(`https://api-football-standings.azharimm.dev/leagues/${leagueId}/standings?season=${year}&sort=asc`);
   const standings = await result.json();
 
   const element = document.getElementById('leagueStandings');
@@ -118,7 +118,7 @@ async function tabelaCampeonato(leagueId, year) {
     const tableRow = document.createElement('tr');
     
     const elem0 = document.createElement('td');
-    elem0.innerHTML = line.stats[8].displayValue;
+    elem0.innerHTML = line.stats[10].displayValue;
 
     const elem1 = document.createElement('td');  
     const logo = line.team.logos[0].href;
@@ -131,16 +131,16 @@ async function tabelaCampeonato(leagueId, year) {
     elem2.innerHTML = line.team.displayName;
 
     const elem3 = document.createElement('td');
-    elem3.innerHTML = line.stats[3].displayValue;
+    elem3.innerHTML = line.stats[0].displayValue;
 
     const elem4 = document.createElement('td');
-    elem4.innerHTML = line.stats[6].displayValue;
+    elem4.innerHTML = line.stats[2].displayValue;
 
     const elem5 = document.createElement('td');
-    elem5.innerHTML = line.stats[0].displayValue;
+    elem5.innerHTML = line.stats[6].displayValue;
 
     const elem6 = document.createElement('td');
-    elem6.innerHTML = line.stats[2].displayValue;
+    elem6.innerHTML = line.stats[5].displayValue;
 
     const elem7 = document.createElement('td');
     elem7.innerHTML = line.stats[1].displayValue;
@@ -149,7 +149,7 @@ async function tabelaCampeonato(leagueId, year) {
     elem8.innerHTML = line.stats[4].displayValue;
 
     const elem9 = document.createElement('td');
-    elem9.innerHTML = line.stats[5].displayValue;
+    elem9.innerHTML = line.stats[3].displayValue;
 
     tableRow.appendChild(elem0);
     tableRow.appendChild(elem1);
